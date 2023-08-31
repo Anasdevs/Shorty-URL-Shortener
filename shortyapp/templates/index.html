@@ -1,0 +1,28 @@
+<!-- shortener/templates/index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shorty - URL Shortener</title>
+</head>
+<body>
+    <h1>Welcome to Shorty - URL Shortener</h1>
+    
+    {% if error_message %}
+    <p style="color: red;">{{ error_message }}</p>
+    {% endif %}
+    
+    <form method="post" action="{% url 'index' %}">
+        {% csrf_token %}
+        <label for="original_url">Original URL:</label><br>
+        <input type="url" id="original_url" name="original_url" required><br><br>
+        
+        <label for="custom_code">Custom Short Code (optional):</label><br>
+        <input type="text" id="custom_code" name="custom_code"><br><br>
+        
+        <label for="expiration_date">Expiration Date (optional):</label><br>
+        <input type="datetime-local" id="expiration_date" name="expiration_date"><br><br>
+        
+        <input type="submit" value="Shorten">
+    </form>
+</body>
+</html>

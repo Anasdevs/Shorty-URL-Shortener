@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shorty - URL Shortener</title>
+</head>
+<body>
+    <h1>Success! Your Shortened URL:</h1>
+
+    <p><a href="{{ short_url_full }}" target="_blank">{{ short_url_full }}</a></p>
+    <p>Shortened URL Expiration Date: {{ expiration_date }}</p>
+    <a href="{% url 'click_analytics' short_code %}">View Click Analytics</a>
+</body>
+</html>
