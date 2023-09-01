@@ -13,6 +13,7 @@ def index(request):
         original_url = request.POST['original_url']
         custom_code = request.POST['custom_code']
         expiration_date_str = request.POST.get('expiration_date', None)
+        print(expiration_date_str)
         if not custom_code:
             custom_code = generate_random_short_code()
         
@@ -47,6 +48,7 @@ def generate_random_short_code(length=6):
 
 def redirect_to_original(request, short_code):
     short_url = get_object_or_404(ShortURL, short_code=short_code)
+    print(short_url.expiration_date)
     
     if short_url.expiration_date and short_url.expiration_date < timezone.now():
         return render(request, 'expired.html')
@@ -63,6 +65,7 @@ def redirect_to_original(request, short_code):
     return redirect(short_url.original_url)
 
 
+
 def click_analytics(request, short_code):
     short_url = get_object_or_404(ShortURL, short_code=short_code)
     click_analytics_entries = ClickAnalytics.objects.filter(short_url=short_url)
@@ -75,7 +78,6 @@ def click_analytics(request, short_code):
         'short_url_full': short_url_full,
         'click_count': click_count,
         'expiration_date': short_url.expiration_date,
-
     }
     
     return render(request, 'click_analytics.html', context)
