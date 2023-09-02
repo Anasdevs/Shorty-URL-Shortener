@@ -1,5 +1,4 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
 from .models import ShortURL, ClickAnalytics
 from django.utils import timezone
 from django.shortcuts import get_object_or_404
@@ -24,7 +23,8 @@ def index(request):
         if expiration_date_str:
             expiration_date = timezone.make_aware(datetime.strptime(expiration_date_str, '%Y-%m-%dT%H:%M'), timezone.get_current_timezone())
         
-        short_url = ShortURL(original_url=original_url, expiration_date=expiration_date)
+        short_url = ShortURL(original_url=original_url, expiration_date=expiration_date, created_at=timezone.now())
+
         if custom_code:
             short_url.short_code = custom_code
         
