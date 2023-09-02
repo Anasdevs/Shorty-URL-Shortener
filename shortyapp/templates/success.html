@@ -1,13 +1,30 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
     <title>Shorty - URL Shortener</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+
 </head>
 <body>
     <h1>Success! Your Shortened URL:</h1>
 
     <p><a href="{{ short_url_full }}" target="_blank">{{ short_url_full }}</a></p>
+
+    <button class="copy-button" onclick="copyToClipboard('{{ short_url_full }}')">Copy</button>
+
     <p>Shortened URL Expiration Date: {{ expiration_date }}</p>
     <a href="{% url 'click_analytics' short_code %}">View Click Analytics</a>
+
+    <script>
+        function copyToClipboard(text) {
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+        }
+    </script>
 </body>
 </html>
