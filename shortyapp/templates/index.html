@@ -7,46 +7,37 @@
     <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
 </head>
 <body>
-    <h1>Welcome to Shorty - URL Shortener</h1>
-    
-    {% if error_message %}
-    <p style="color: red;">{{ error_message }}</p>
+    <div class="index-main">
+
+        <h1>Welcome to Shorty - URL Shortener</h1>
+        <div class="index-form">
+
+            {% if error_message %}
+            <p style="color: red;">{{ error_message }}</p>
     {% endif %}
     
     <form method="post" action="{% url 'index' %}">
         {% csrf_token %}
         <div class="form-main">
 
-            <label for="original_url">Original URL:</label>
-            <input type="url" id="original_url" name="original_url" required>
+            <!-- <label for="original_url">Original URL:</label> -->
+            <!-- <input type="url" id="original_url" name="original_url" placeholder="Paste the url to shorten" required> -->
         
-            <label for="custom_code">Custom Short Code (optional):</label>
-            <input type="text" id="custom_code" name="custom_code">
+            <!-- <label for="custom_code">Custom Short Code (optional):</label> -->
+            <!-- <input type="text" id="custom_code" name="custom_code" placeholder="Enter a custom text eg: mymeet"> -->
+            
+            <!-- <label for="expiration_date">Expiration Date (optional):</label> -->
+            <!-- <input type="datetime-local" id="expiration_date" name="expiration_date" placeholder="Select a date for expiration"> -->
         
-            <label for="expiration_date">Expiration Date (optional):</label>
-            <input type="datetime-local" id="expiration_date" name="expiration_date">
-        
-            <input type="submit" id="Shorten">
+            
+            <input type="url" id="original_url" name="original_url" placeholder="Paste the URL to shorten" required>
+            <input type="text" id="custom_code" name="custom_code" placeholder="Enter a custom text eg: mymeet">
+            <input type="datetime-local" id="expiration_date" name="expiration_date" placeholder="Select a date for expiration">
+            <button type="submit" id="shorten">Shorten</button>
+        </div>
         </div>
     </form>
 
-    {% if short_url_full %}
-    <div id="short-url">
-        <p>{{ short_url_full }}</p>
-        <button class="copy-button" onclick="copyToClipboard('{{ short_url_full }}')">Copy</button>
-    </div>
-    {% endif %}
-
-    <script>
-        // JavaScript function to copy text to clipboard
-        function copyToClipboard(text) {
-            const textarea = document.createElement('textarea');
-            textarea.value = text;
-            document.body.appendChild(textarea);
-            textarea.select();
-            document.execCommand('copy');
-            document.body.removeChild(textarea);
-        }
-    </script>
+</div>
 </body>
 </html>

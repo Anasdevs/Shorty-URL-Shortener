@@ -1,37 +1,83 @@
 /* static/styles.css */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=PT+Sans+Caption&family=Poppins:wght@300;400&family=Source+Sans+3&display=swap');
+
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
     min-height: 100vh;
     margin: 0;
+    background: linear-gradient(to bottom, #000000, #282727);
+    font-family: Poppins;
+
 }
 
-h1 {
-    color: #333;
-}
-
-.form-main {
+.index-main h1 {
     text-align: center;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0px 0px 5px 0px #000;
-    max-width: 400px;
-    width: 100%;
-    box-sizing: border-box;
+    margin-top: 10%;
+    color: white;
 }
+
+input[type="url"], input[type="text"], input[type="datetime-local"] {
+    width: 50%;
+    padding: 10px;
+    margin: 5px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.2s;
+    background-color: #fdfeff81;
+    color: rgba(255, 255, 255, 0.511);
+    padding: 10px;
+}
+
+input[type="url"]:focus, input[type="text"]:focus, input[type="datetime-local"]:focus {
+    border-color: #011a35;
+    box-shadow: 0 0 5px #03376b;
+}
+
+input[type="url"]::placeholder, input[type="text"]::placeholder, input[type="datetime-local"]::placeholder {
+    color: rgb(220, 220, 220);
+    font-size: 12px;
+}
+
+button[type="submit"] {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 1em;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    width: 25%;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+
+
+.form-main{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 1em;
+
+}
+
+/*
 
 label, input {
     display: block;
     margin-bottom: 10px;
 }
 
-/* Add a copy button style */
 .copy-button {
     background-color: #007bff;
     color: #fff;
@@ -45,9 +91,7 @@ label, input {
     background-color: #0056b3;
 }
 
-/* Style for the shortened URL text */
 #short-url {
     font-size: 18px;
     font-weight: bold;
-    margin-top: 10px;
-}
+} */
