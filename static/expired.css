@@ -7,41 +7,14 @@ body {
     flex-direction: column;
     min-height: 100vh;
     margin: 0;
+    align-items: center;
+    margin-top: 10%;
     background: linear-gradient(to bottom, #000000, #282727);
     font-family: Poppins;
     color: white;
-}
-
-
-.analytics-main h1, p{
     text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-    
-}
-.analytics-main h1{
-    display: block;
 }
 
-span.anaytics-url{
-    border:2px solid black;
-    display: inline-block;
-}
-
-.analytics-main{
-    display: flex;
-    align-items: center;
-    margin-top: 10%;
-    flex-direction: column;
-    height: 100vh;
-}
-
-
-.analytics-url{
-    color: rgb(80, 80, 206);
-}
-
-
-.click-count{
-    font-size: 30px;
+.expired-main h1{
     color: white;
 }

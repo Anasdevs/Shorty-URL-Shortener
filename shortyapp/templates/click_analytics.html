@@ -10,9 +10,10 @@
 <body>
     <div class="analytics-main">
 
-        <h1>Click Analytics for Short URL: <span class="analytics-url">{{ short_url_full }}</span></h1>
-        <p>Click Count: {{ click_count }}</p>
-    <p>Shortened URL Expiration Date: {{ expiration_date }}</p>
+        <h1>Click Analytics for Short URL <a href="{{ short_url_full }}" target="_blank" class="analytics-url">{{ short_url_full }}</a></h1>
+
+        <p class="expiration-date">Shortened URL Expiration Date: {{ expiration_date }}</p>
+        <p class="click-count">Click Count: {{ click_count }}</p>
     
     <ul>
         {% for entry in click_analytics_entries %}
