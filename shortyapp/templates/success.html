@@ -3,19 +3,23 @@
 <html>
 <head>
     <title>Shorty - URL Shortener</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'success.css' %}">
+
 
 </head>
 <body>
+    <div class="success-main">
+        <h1>Success! Your Shortened URL</h1>
+        <div class="success-url">
+            <p><a href="{{ short_url_full }}" target="_blank">{{ short_url_full }}</a></p>
+            <button class="copy-button" onclick="copyToClipboard('{{ short_url_full }}')">Copy</button>
+        </div>
+        <div class="analytics-a">
+            <p>Shortened URL Expiration Date: <span class="expiration-date"> {{ expiration_date }}</span></p>
+            <a href="{% url 'click_analytics' short_code %}">View Click Analytics</a>
+        </div>
+    </div>
     
-    <h1>Success! Your Shortened URL:</h1>
-
-    <p><a href="{{ short_url_full }}" target="_blank">{{ short_url_full }}</a></p>
-
-    <button class="copy-button" onclick="copyToClipboard('{{ short_url_full }}')">Copy</button>
-
-    <p>Shortened URL Expiration Date: {{ expiration_date }}</p>
-    <a href="{% url 'click_analytics' short_code %}">View Click Analytics</a>
 
     <script>
         function copyToClipboard(text) {
@@ -25,6 +29,13 @@
             textarea.select();
             document.execCommand('copy');
             document.body.removeChild(textarea);
+            
+            const copyButton = document.querySelector('.copy-button');
+            copyButton.innerHTML = 'Copied';
+            
+            setTimeout(function() {
+                copyButton.innerHTML = 'Copy';
+            }, 3000);
         }
     </script>
 </body>
