@@ -7,6 +7,7 @@ body {
     flex-direction: column;
     min-height: 100vh;
     margin: 0;
+    padding: 0;
     background: linear-gradient(to bottom, #000000, #282727);
     font-family: Poppins;
     color: white;
@@ -32,7 +33,6 @@ span.anaytics-url{
     align-items: center;
     margin-top: 10%;
     flex-direction: column;
-    height: 100vh;
 }
 
 
@@ -45,3 +45,36 @@ span.anaytics-url{
     font-size: 30px;
     color: white;
 }
+
+
+.shorten-another{
+    margin-top: 20px;
+    text-align:center;
+}
+.shorten-another a{
+    color: rgb(93, 93, 173);
+    
+}
+footer {
+    background-color: #58585e;
+    color: white;
+    text-align: center;
+    padding: 5px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 14px;
+  }
+  
+  .footer p {
+    margin: 5px 0;
+  }
+  
+  .footer a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .footer a:hover {
+    text-decoration: underline;
+  }

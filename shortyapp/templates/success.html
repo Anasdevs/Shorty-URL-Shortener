@@ -3,6 +3,7 @@
 <html>
 <head>
     <title>Shorty - URL Shortener</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'success.css' %}">
 
 
@@ -18,8 +19,16 @@
             <p>Shortened URL Expiration Date: <span class="expiration-date"> {{ expiration_date }}</span></p>
             <a href="{% url 'click_analytics' short_code %}">View Click Analytics</a>
         </div>
+        <div class="shorten-another">
+            <a href="{% url 'index' %}">Shorten another URL</a>
+
+        </div>
+        
     </div>
-    
+    <footer class="footer">
+        <p>&copy 2023 All rights reserved.</p>
+        <p>Developed by Anas</p>
+    </footer>
 
     <script>
         function copyToClipboard(text) {

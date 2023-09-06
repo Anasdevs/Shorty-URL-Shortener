@@ -3,6 +3,7 @@
 <html>
 <head>
     <title>Shorty - URL Shortener</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'expired.css' %}">
 </head>
 <body>
@@ -11,5 +12,14 @@
         <h1>Oops! This Shortened URL Has Expired</h1>
         <p>The short URL you've used has expired and is no longer accessible.</p>
     </div>
+    <div class="shorten-another">
+        <a href="{% url 'index' %}">Shorten another URL</a>
+
+    </div>
+    
+    <footer class="footer">
+        <p>&copy 2023 All rights reserved.</p>
+        <p>Developed by Anas</p>
+    </footer>
 </body>
 </html>

@@ -5,13 +5,17 @@
 <html>
 <head>
     <title>Shorty - Click Analytics</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'analytics.css' %}">
 </head>
 <body>
     <div class="analytics-main">
 
         <h1>Click Analytics for Short URL <a href="{{ short_url_full }}" target="_blank" class="analytics-url">{{ short_url_full }}</a></h1>
-
+        <div class="shorten-another">
+            <a href="{% url 'index' %}">Shorten another URL</a>
+        
+        </div>
         <p class="expiration-date">Shortened URL Expiration Date: {{ expiration_date }}</p>
         <p class="click-count">Click Count: {{ click_count }}</p>
     
@@ -25,6 +29,13 @@
         </li>
         {% endfor %}
     </ul>
+    
 </div>
+
+
+<footer class="footer">
+    <p>&copy 2023 All rights reserved.</p>
+    <p>Developed by Anas</p>
+</footer>
 </body>
 </html>

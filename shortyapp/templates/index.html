@@ -4,6 +4,7 @@
 <html>
 <head>
     <title>Shorty - URL Shortener</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
 </head>
 <body>
@@ -19,16 +20,6 @@
     <form method="post" action="{% url 'index' %}">
         {% csrf_token %}
         <div class="form-main">
-
-            <!-- <label for="original_url">Original URL:</label> -->
-            <!-- <input type="url" id="original_url" name="original_url" placeholder="Paste the url to shorten" required> -->
-        
-            <!-- <label for="custom_code">Custom Short Code (optional):</label> -->
-            <!-- <input type="text" id="custom_code" name="custom_code" placeholder="Enter a custom text eg: mymeet"> -->
-            
-            <!-- <label for="expiration_date">Expiration Date (optional):</label> -->
-            <!-- <input type="datetime-local" id="expiration_date" name="expiration_date" placeholder="Select a date for expiration"> -->
-        
             
             <input type="url" id="original_url" name="original_url" placeholder="Paste the URL to shorten" required>
             <input type="text" id="custom_code" name="custom_code" placeholder="Enter a custom text eg: mymeet">
@@ -37,7 +28,10 @@
         </div>
         </div>
     </form>
-
+    <footer class="footer">
+        <p>&copy 2023 All rights reserved.</p>
+        <p>Developed by Anas</p>
+    </footer>
 </div>
 </body>
 </html>
