@@ -56,7 +56,6 @@ def redirect_to_original(request, short_code):
     # Create a ClickAnalytics entry to track the click
     ClickAnalytics.objects.create(
         short_url=short_url,
-        ip_address=request.META['REMOTE_ADDR'],
         timestamp=timezone.now()
     )
     short_url.click_count += 1

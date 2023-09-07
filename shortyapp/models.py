@@ -11,4 +11,3 @@ class ShortURL(models.Model):
 class ClickAnalytics(models.Model):
     short_url = models.ForeignKey(ShortURL, on_delete=models.CASCADE)
     timestamp = models.DateTimeField(auto_now_add=True, db_index=True)
-    ip_address = models.GenericIPAddressField()
