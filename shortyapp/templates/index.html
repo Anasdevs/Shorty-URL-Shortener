@@ -4,13 +4,15 @@
 <html>
 <head>
     <title>Shorty - URL Shortener</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
 </head>
 <body>
     <div class="index-main">
 
-        <h1>Welcome to Shorty - URL Shortener</h1>
+        <h1>Welcome to Shorty - <span class="url-shortener">URL Shortener</span></h1>
+
         <div class="index-form">
 
             {% if error_message %}

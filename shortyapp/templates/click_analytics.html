@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Shorty - Click Analytics</title>
     <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'analytics.css' %}">
@@ -18,16 +19,17 @@
         </div>
         <p class="expiration-date">Shortened URL Expiration Date: {{ expiration_date }}</p>
         <p class="click-count">Click Count: {{ click_count }}</p>
-    
-    <ul>
-        {% for entry in click_analytics_entries %}
-        <li>
-            Clicked at: {% timezone "Asia/Kolkata" %}
-                            {{ entry.timestamp|localtime }}
-                        {% endtimezone %}
-        </li>
-        {% endfor %}
-    </ul>
+        <div class="click-list">
+            <ul class="centered-list">
+                {% for entry in click_analytics_entries %}
+                <li>
+                    Clicked at: {% timezone "Asia/Kolkata" %}
+                    {{ entry.timestamp|localtime }}
+                    {% endtimezone %}
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
     
 </div>
 

@@ -116,3 +116,18 @@ footer {
   .footer a:hover {
     text-decoration: underline;
   }
+
+
+  @media (max-width:768px){
+    body{
+        overflow: hidden;
+    }
+    
+    .success-main h1 {
+        text-align: center;
+        color: white;
+        margin-top: 15%;
+        margin-bottom: 5%;
+        overflow: hidden;
+    }
+  }

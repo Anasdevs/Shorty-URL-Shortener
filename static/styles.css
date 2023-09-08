@@ -3,20 +3,24 @@
 
 body {
     font-family: Arial, sans-serif;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
     margin: 0;
     background: linear-gradient(to bottom, #000000, #282727);
+    background-repeat: no-repeat;
     font-family: Poppins;
+    overflow: hidden;
+}
 
+.index-main{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin-top: 10%;
 }
 
 .index-main h1 {
     text-align: center;
-    margin-top: 10%;
-    color: white;
+    margin-top: 0;
+    color: rgb(255, 255, 255);
 }
 
 .index-form p{
@@ -39,7 +43,7 @@ input[type="url"], input[type="text"], input[type="datetime-local"] {
 
 input[type="url"]:focus, input[type="text"]:focus, input[type="datetime-local"]:focus {
     border-color: #011a35;
-    box-shadow: 0 0 5px #03376b;
+    box-shadow: 0 0 5px #b0c3d6;
     background-color: transparent;
     color: white;
 }
@@ -47,6 +51,12 @@ input[type="url"]:focus, input[type="text"]:focus, input[type="datetime-local"]:
 input[type="url"]::placeholder, input[type="text"]::placeholder, input[type="datetime-local"]::placeholder {
     color: rgb(102, 97, 97);
     font-size: 12px;
+}
+
+input[type="url"]:focus::placeholder,
+input[type="text"]:focus::placeholder,
+input[type="datetime-local"]:focus::placeholder {
+    color: white;
 }
 
 button[type="submit"] {
@@ -101,3 +111,34 @@ footer {
   .footer a:hover {
     text-decoration: underline;
   }
+
+
+@media (max-width:768px){
+
+    
+    .index-main h1 {
+        text-align: center;
+        color: white;
+        margin-bottom: 10%;
+    }
+
+    .index-main h1 .url-shortener {
+        display: block;
+        margin-top: 0; 
+    }
+
+    input[type="url"], input[type="text"], input[type="datetime-local"] {
+        width: 70%;
+        padding: 10px;
+    margin: 8px;
+
+    }    
+    
+    input[type="url"]::placeholder, input[type="text"]::placeholder, input[type="datetime-local"]::placeholder {
+        color: rgb(36, 35, 35);
+        font-size: 12px;
+    }
+    button[type="submit"] {
+        width: 50%;
+    }
+}
