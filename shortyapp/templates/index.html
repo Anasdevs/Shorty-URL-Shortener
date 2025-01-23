@@ -2,41 +2,68 @@
 
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>Shorty - URL Shortener</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
-</head>
-<body>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}" />
+  </head>
+  <body>
     <div class="index-main">
+      <h1>
+        Welcome to Shorty - <span class="url-shortener">URL Shortener</span>
+      </h1>
 
-        <h1>Welcome to Shorty - <span class="url-shortener">URL Shortener</span></h1>
+      <div class="index-form">
+        {% if error_message %}
+        <p style="color: red">{{ error_message }}</p>
+        {% endif %}
 
-        <div class="index-form">
+        <form method="post" action="{% url 'index' %}">
+          {% csrf_token %}
+          <div class="form-main">
+            <input
+              type="url"
+              id="original_url"
+              name="original_url"
+              placeholder="Paste the URL to shorten"
+              required
+            />
+            <input
+              type="text"
+              id="custom_code"
+              name="custom_code"
+              placeholder="Enter a custom text eg: mymeet"
+            />
 
-            {% if error_message %}
-            <p style="color: red;">{{ error_message }}</p>
-    {% endif %}
-    
-    <form method="post" action="{% url 'index' %}">
-        {% csrf_token %}
-        <div class="form-main">
-            
-            <input type="url" id="original_url" name="original_url" placeholder="Paste the URL to shorten" required>
-            <input type="text" id="custom_code" name="custom_code" placeholder="Enter a custom text eg: mymeet">
-            <input type="datetime-local" id="expiration_date" name="expiration_date" placeholder="Select a date for expiration">
+            <label for="expiration_date">Link Expiration</label>
+            <input
+              type="datetime-local"
+              id="expiration_date"
+              name="expiration_date"
+              placeholder="Select a date for expiration"
+            />
+
             <button type="submit" id="shorten">Shorten</button>
-        </div>
-        </div>
-    </form>
-    <footer class="footer">
+          </div>
+        </form>
+      </div>
+
+      <footer class="footer">
         <p>&copy 2024 All rights reserved.</p>
         <p>Developed by Anas</p>
-    </footer>
-</div>
-</body>
+      </footer>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const errorMessage = document.querySelector("p[style='color: red;']");
+        if (errorMessage) {
+          setTimeout(() => {
+            errorMessage.style.display = "none";
+          }, 5000);
+        }
+      });
+    </script>
+  </body>
 </html>
-
-
-

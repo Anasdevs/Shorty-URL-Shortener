@@ -1,52 +1,62 @@
 {% load static %}
 <!DOCTYPE html>
 <html>
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Shorty - URL Shortener</title>
-    <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'success.css' %}">
-
-
-</head>
-<body>
+    <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'success.css' %}" />
+  </head>
+  <body>
     <div class="success-main">
-        <h1>Your Shortened URL</h1>
-        <div class="success-url">
-            <p><a href="{{ short_url_full }}" target="_blank">{{ short_url_full }}</a></p>
-            <button class="copy-button" onclick="copyToClipboard('{{ short_url_full }}')">Copy</button>
-        </div>
-        <div class="analytics-a">
-            <p>Shortened URL Expiration Date: <span class="expiration-date"> {{ expiration_date }}</span></p>
-            <a href="{% url 'click_analytics' short_code %}">View Click Analytics</a>
-        </div>
-        <div class="shorten-another">
-            <a href="{% url 'index' %}">Shorten another URL</a>
-
-        </div>
-        
+      <h1>Your Shortened URL</h1>
+      <div class="success-url">
+        <p>
+          <a href="{{ short_url_full }}" target="_blank"
+            >{{ short_url_full }}</a
+          >
+        </p>
+        <button
+          class="copy-button"
+          onclick="copyToClipboard('{{ short_url_full }}')"
+        >
+          Copy
+        </button>
+      </div>
+      <div class="analytics-a">
+        <p>
+          Shortened URL Expiration Date:
+          <span class="expiration-date"> {{ expiration_date }}</span>
+        </p>
+        <a href="{% url 'click_analytics' short_code %}"
+          >View Click Analytics</a
+        >
+      </div>
+      <div class="shorten-another">
+        <a href="{% url 'index' %}">Shorten another URL</a>
+      </div>
     </div>
     <footer class="footer">
-        <p>&copy 2023 All rights reserved.</p>
-        <p>Developed by Anas</p>
+      <p>&copy 2025 All rights reserved.</p>
+      <p>Developed by Anas</p>
     </footer>
 
     <script>
-        function copyToClipboard(text) {
-            const textarea = document.createElement('textarea');
-            textarea.value = text;
-            document.body.appendChild(textarea);
-            textarea.select();
-            document.execCommand('copy');
-            document.body.removeChild(textarea);
-            
-            const copyButton = document.querySelector('.copy-button');
-            copyButton.innerHTML = 'Copied';
-            
-            setTimeout(function() {
-                copyButton.innerHTML = 'Copy';
-            }, 3000);
-        }
+      function copyToClipboard(text) {
+        const textarea = document.createElement("textarea");
+        textarea.value = text;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand("copy");
+        document.body.removeChild(textarea);
+
+        const copyButton = document.querySelector(".copy-button");
+        copyButton.innerHTML = "Copied";
+
+        setTimeout(function () {
+          copyButton.innerHTML = "Copy";
+        }, 3000);
+      }
     </script>
-</body>
+  </body>
 </html>

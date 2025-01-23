@@ -1,144 +1,154 @@
 /* static/styles.css */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=PT+Sans+Caption&family=Poppins:wght@300;400&family=Source+Sans+3&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=PT+Sans+Caption&family=Poppins:wght@300;400&family=Source+Sans+3&display=swap");
 
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background: linear-gradient(to bottom, #000000, #282727);
-    background-repeat: no-repeat;
-    font-family: Poppins;
-    overflow: hidden;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: linear-gradient(to bottom, #000000, #282727);
+  background-repeat: no-repeat;
+  font-family: Poppins;
+  overflow: hidden;
 }
 
-.index-main{
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    margin-top: 10%;
+.index-main {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  margin-top: 10%;
+}
+
+label {
+  color: rgb(151, 173, 247) !important;
+  width: 50%;
+  font-size: 15px;
+  margin-top: 5px;
+  margin-right: 15px;
 }
 
 .index-main h1 {
-    text-align: center;
-    margin-top: 0;
-    color: rgb(255, 255, 255);
+  text-align: center;
+  margin-top: 0;
+  color: rgb(255, 255, 255);
 }
 
-.index-form p{
-    text-align: center;
+.index-form p {
+  text-align: center;
 }
 
-input[type="url"], input[type="text"], input[type="datetime-local"] {
-    width: 50%;
-    padding: 10px;
-    margin: 5px;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    outline: none;
-    transition: border-color 0.2s;
-    background-color: #fdfeffdd;
-    color: rgb(58, 58, 58);
-    padding: 10px;
+input[type="url"],
+input[type="text"],
+input[type="datetime-local"] {
+  width: 50%;
+  padding: 10px;
+  margin: 5px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.2s;
+  background-color: #fdfeffdd;
+  color: rgb(58, 58, 58);
+  padding: 10px;
 }
 
-input[type="url"]:focus, input[type="text"]:focus, input[type="datetime-local"]:focus {
-    border-color: #011a35;
-    box-shadow: 0 0 5px #b0c3d6;
-    background-color: transparent;
-    color: white;
+input[type="url"]:focus,
+input[type="text"]:focus,
+input[type="datetime-local"]:focus {
+  border-color: #011a35;
+  box-shadow: 0 0 5px #b0c3d6;
+  background-color: transparent;
+  color: white;
 }
 
-input[type="url"]::placeholder, input[type="text"]::placeholder, input[type="datetime-local"]::placeholder {
-    color: rgb(102, 97, 97);
-    font-size: 12px;
+input[type="url"]::placeholder,
+input[type="text"]::placeholder,
+input[type="datetime-local"]::placeholder {
+  color: rgb(102, 97, 97);
+  font-size: 12px;
 }
 
 input[type="url"]:focus::placeholder,
 input[type="text"]:focus::placeholder,
 input[type="datetime-local"]:focus::placeholder {
-    color: white;
+  color: white;
 }
 
 button[type="submit"] {
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    margin-top: 1em;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.2s;
-    width: 25%;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 1em;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  width: 25%;
 }
 
 button[type="submit"]:hover {
-    background-color: #0056b3;
+  background-color: #0056b3;
 }
 
-
-
-.form-main{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    margin-top: 3em;
-
+.form-main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 3em;
 }
-
 
 footer {
-    background-color: #58585e;
-    color: white;
+  background-color: #58585e;
+  color: white;
+  text-align: center;
+  padding: 5px 0;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  font-size: 14px;
+}
+
+.footer p {
+  margin: 5px 0;
+}
+
+.footer a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .index-main h1 {
     text-align: center;
-    padding: 5px 0;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    font-size: 14px;
-  }
-  
-  .footer p {
-    margin: 5px 0;
-  }
-  
-  .footer a {
     color: white;
-    text-decoration: none;
-  }
-  
-  .footer a:hover {
-    text-decoration: underline;
+    margin-bottom: 10%;
   }
 
+  .index-main h1 .url-shortener {
+    display: block;
+    margin-top: 0;
+  }
 
-@media (max-width:768px){
-
-    
-    .index-main h1 {
-        text-align: center;
-        color: white;
-        margin-bottom: 10%;
-    }
-
-    .index-main h1 .url-shortener {
-        display: block;
-        margin-top: 0; 
-    }
-
-    input[type="url"], input[type="text"], input[type="datetime-local"] {
-        width: 70%;
-        padding: 10px;
+  input[type="url"],
+  input[type="text"],
+  input[type="datetime-local"] {
+    width: 70%;
+    padding: 10px;
     margin: 8px;
+  }
 
-    }    
-    
-    input[type="url"]::placeholder, input[type="text"]::placeholder, input[type="datetime-local"]::placeholder {
-        color: rgb(36, 35, 35);
-        font-size: 12px;
-    }
-    button[type="submit"] {
-        width: 50%;
-    }
+  input[type="url"]::placeholder,
+  input[type="text"]::placeholder,
+  input[type="datetime-local"]::placeholder {
+    color: rgb(36, 35, 35);
+    font-size: 12px;
+  }
+  button[type="submit"] {
+    width: 50%;
+  }
 }
