@@ -31,8 +31,7 @@
         <ul class="centered-list">
           {% for entry in click_analytics_entries %}
           <li>
-            Clicked at: {% timezone "Asia/Kolkata" %} {{
-            entry.timestamp|localtime }} {% endtimezone %}
+            Clicked at: {{ entry.timestamp|localtime|date:"Y-m-d H:i:s" }}
           </li>
           {% endfor %}
         </ul>
